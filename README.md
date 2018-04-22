@@ -1,0 +1,1 @@
+This is a demo app I created to help others get into AR Kit, and to learn a couple things myself. 

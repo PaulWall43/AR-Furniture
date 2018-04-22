@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="SofaAR2" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <arscnView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Oxc-sM-2Ir">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="Mmc-Ty-v9n"/>
+                                    <outletCollection property="gestureRecognizers" destination="ygJ-5z-4NF" appends="YES" id="eW1-6c-Kye"/>
+                                    <outletCollection property="gestureRecognizers" destination="c4x-X5-ADl" appends="YES" id="Ljc-Zt-emK"/>
+                                    <outletCollection property="gestureRecognizers" destination="p1D-JB-04h" appends="YES" id="HXR-tM-iPM"/>
+                                    <outletCollection property="gestureRecognizers" destination="nFJ-gb-s6X" appends="YES" id="23d-HH-5cO"/>
+                                </connections>
+                            </arscnView>
+                            <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7nz-fH-Y5q">
+                                <rect key="frame" x="0.0" y="20" width="375" height="42"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="en5-Dl-LEf">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="42"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LKB-Yi-bWc">
+                                            <rect key="frame" x="8" y="11" width="359" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="LKB-Yi-bWc" firstAttribute="leading" secondItem="en5-Dl-LEf" secondAttribute="leading" constant="8" id="fXh-7d-WrU"/>
+                                        <constraint firstAttribute="trailing" secondItem="LKB-Yi-bWc" secondAttribute="trailing" constant="8" id="j1W-HJ-5aU"/>
+                                        <constraint firstItem="LKB-Yi-bWc" firstAttribute="top" secondItem="en5-Dl-LEf" secondAttribute="top" constant="11" id="mZ5-81-BNs"/>
+                                    </constraints>
+                                </view>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="42" id="Zmn-AY-oqR"/>
+                                </constraints>
+                                <blurEffect style="light"/>
+                            </visualEffectView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="bottomMargin" secondItem="Oxc-sM-2Ir" secondAttribute="bottom" id="0Md-DC-PpS"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="7nz-fH-Y5q" secondAttribute="trailing" id="EoW-w4-awZ"/>
+                            <constraint firstItem="7nz-fH-Y5q" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Opw-A6-ZdX"/>
+                            <constraint firstItem="Oxc-sM-2Ir" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="RNJ-VR-DOP"/>
+                            <constraint firstItem="Oxc-sM-2Ir" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="iyJ-3v-19u"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Oxc-sM-2Ir" secondAttribute="trailing" id="nDy-5L-ufN"/>
+                            <constraint firstItem="7nz-fH-Y5q" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="wUi-Hb-LMm"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="arStateLabel" destination="LKB-Yi-bWc" id="DJt-H5-BQm"/>
+                        <outlet property="doublePressGestureRecognizer" destination="nFJ-gb-s6X" id="EXa-AB-frI"/>
+                        <outlet property="rotationGestureRecognizer" destination="p1D-JB-04h" id="LUU-jU-ZQd"/>
+                        <outlet property="sceneView" destination="Oxc-sM-2Ir" id="fIl-hJ-LE7"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="ygJ-5z-4NF">
+                    <connections>
+                        <action selector="screenTapped:" destination="BYZ-38-t0r" id="Owj-EL-pep"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="c4x-X5-ADl">
+                    <connections>
+                        <action selector="screenDragged:" destination="BYZ-38-t0r" id="sza-o0-1rR"/>
+                    </connections>
+                </panGestureRecognizer>
+                <rotationGestureRecognizer id="p1D-JB-04h">
+                    <connections>
+                        <action selector="screenRotated:" destination="BYZ-38-t0r" id="bun-Bo-tVL"/>
+                    </connections>
+                </rotationGestureRecognizer>
+                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="nFJ-gb-s6X">
+                    <connections>
+                        <action selector="screenDoublePressed:" destination="BYZ-38-t0r" id="5sh-6c-Nyi"/>
+                    </connections>
+                </pongPressGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="24.800000000000001" y="31.934032983508249"/>
+        </scene>
+    </scenes>
+</document>
