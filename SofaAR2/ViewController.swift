@@ -88,7 +88,6 @@ class ViewController: UIViewController {
         }
     }
 
-    
     @IBAction func screenRotated(_ sender: UIRotationGestureRecognizer) {
         print("Screen Rotated")
         //Only works if rotationReady is set to true
@@ -97,8 +96,6 @@ class ViewController: UIViewController {
             node.eulerAngles.y += Float(sender.rotation)
             sender.rotation = 0
         }
-        
-        
     }
     
     @IBAction func screenDragged(_ sender: UIPanGestureRecognizer) {
@@ -133,8 +130,6 @@ class ViewController: UIViewController {
         print("Translating Node Exists")
         //If we get here then we need to move the object now
         self.moveNodeToPlanePositionWhereFingerDragged(finalPoint: finalPoint, sender: sender)
-            
-//        }
     }
     
     func moveNodeToPlanePositionWhereFingerDragged(finalPoint: CGPoint, sender: UIPanGestureRecognizer) {
@@ -169,12 +164,8 @@ class ViewController: UIViewController {
                 let z = result.worldTransform.columns.3.z
                 guard let sofaScene = SCNScene(named: "art.scnassets/sofa-travis.scn") else {return}
                 guard let sofaNode = sofaScene.rootNode.childNode(withName: "Sofa", recursively: true) else {return}
-    //            sofaNode.position = SCNVector3(0, 0, 0)
-    //            sofaNode.transform = SCNMatrix4Rotate(sofaNode.transform, Float.pi/2, 0, 1, 0)
-                
                 sofaNode.position = SCNVector3(x, y + 0.55, z)
                 //Rotate the sofaNode to face the camera
-
                 let roll =  self.sceneView.pointOfView!.eulerAngles.z
                 let pitch = self.sceneView.pointOfView!.eulerAngles.x
                 let yaw = self.sceneView.pointOfView!.eulerAngles.y
@@ -218,7 +209,8 @@ extension ViewController: ARSessionObserver {
                 case ARCamera.TrackingState.Reason.excessiveMotion: self.arStateLabel.text = "The Camera is Moving Too Much"
                 case ARCamera.TrackingState.Reason.initializing: self.arStateLabel.text = "Initializing AR Functionality..."
                 case ARCamera.TrackingState.Reason.insufficientFeatures: self.arStateLabel.text = "Try a Different Background"
-                }
+                case .relocalizing: self.arStateLabel.text = "Relocalizing"
+            }
         }
     }
 }
